@@ -10,22 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_08_140839) do
+ActiveRecord::Schema.define(version: 2019_09_09_035743) do
 
-  create_table "calendars", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "weight"
-    t.integer "goal"
-  end
-
-  create_table "humans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "height"
-    t.integer "weight"
-    t.integer "BMI"
+  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "text"
+    t.string "image"
+    t.string "sex"
+    t.integer "age"
+    t.float "height"
+    t.float "weight"
+    t.float "goal_weight"
+    t.float "BMI"
+    t.bigint "user_id"
   end
 
   create_table "trainings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.integer "MET"
+    t.float "MET"
     t.integer "time"
     t.integer "kcal"
   end
@@ -33,8 +34,10 @@ ActiveRecord::Schema.define(version: 2019_09_08_140839) do
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "name"
-    t.text "text"
-    t.text "image"
+    t.float "start_height"
+    t.float "start_weight"
+    t.float "gole"
+    t.float "start_BMI"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

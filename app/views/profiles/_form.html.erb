@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col s4">
+    <%= form_with model: @profile do |f| %>
+
+      <%= f.label :height, '身長' %>
+      <%= f.text_field :height %>
+
+      <%= f.label :start_weight, '体重' %>
+      <%= f.text_field :weight %>
+
+      <%= f.label :sex, '性別' %><br>
+      <%= f.select :sex, [["男", "男"], ["女", "女"]] %>
+
+      <%= f.label :age, '年齢' %>
+      <%= f.text_field :age %>
+
+      <%= f.label :goal_weight, '目標体重' %>
+      <%= f.text_field :goal_weight %>
+
+      <%= f.submit '投稿', class: 'waves-effect waves-light btn orange' %>
+      <%= link_to 'キャンセル', root_path, class: 'waves-effect waves-light btn grey' %>
+    <% end %>
+  </div>
+</div>
