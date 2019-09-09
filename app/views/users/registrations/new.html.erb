@@ -14,6 +14,21 @@
   </div>
 
   <div class="field">
+    <%= f.label :"start_height(cm)" %><br />
+    <%= f.number_field :start_height, autocomplete: "start_height",step: :any %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"start_weight(kg)" %><br />
+    <%= f.number_field :start_weight, autocomplete: "start_weight",step: :any %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"gole_weight(kg)" %><br />
+    <%= f.number_field :gole, autocomplete: "gole",step: :any%>
+  </div>
+
+  <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>

@@ -6,8 +6,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :name
-      t.text :text
-      t.text :image
+      t.float :start_height
+      t.float :start_weight
+      t.float :gole
+      t.float :start_BMI
       t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable
