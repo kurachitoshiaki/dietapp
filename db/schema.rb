@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_09_035743) do
+ActiveRecord::Schema.define(version: 2019_09_10_032436) do
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "text"
     t.string "image"
     t.string "sex"
     t.integer "age"
-    t.float "height"
-    t.float "weight"
-    t.float "goal_weight"
-    t.float "BMI"
+    t.float "new_height"
+    t.float "new_weight"
+    t.float "new_goal"
+    t.float "new_BMI"
     t.bigint "user_id"
   end
 
@@ -29,11 +29,13 @@ ActiveRecord::Schema.define(version: 2019_09_09_035743) do
     t.float "MET"
     t.integer "time"
     t.integer "kcal"
+    t.bigint "user_id"
+    t.bigint "profile_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
-    t.string "name"
+    t.string "user_name"
     t.float "start_height"
     t.float "start_weight"
     t.float "gole"
@@ -46,6 +48,14 @@ ActiveRecord::Schema.define(version: 2019_09_09_035743) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "weight_news", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.float "updata_weight"
+    t.bigint "user_id"
+    t.bigint "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

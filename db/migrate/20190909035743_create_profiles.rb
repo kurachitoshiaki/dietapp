@@ -5,10 +5,10 @@ class CreateProfiles < ActiveRecord::Migration[5.2]
       t.string :image
       t.string :sex
       t.integer :age
-      t.float :height
-      t.float :weight
-      t.float :goal_weight
-      t.float :BMI
+      t.float :new_height
+      t.float :new_weight
+      t.float :new_goal
+      t.float :new_BMI
       t.bigint :user_id
     end
   end
