@@ -1,37 +1,34 @@
 class ProfilesController < ApplicationController
+  before_action :authenticate_user!,:set_profile,only:[:show,:edit,:update]
 
     def index
-        @profile = Profile.find(1)
+      @profile = Profile.find_by(current_user[:user_id])
+    end
+
+    def show
     end
 
     def new
-        @profile = Profile.new
+      @profile = Profile.new
     end
 
     def create
-        @profile = Profile.new(profile_params)
-    
+        @profile = current_user.build_profile(profile_params)
+        binding.pry
         if @profile.save
-          flash[:notice] = 'プロフィールを保存しました。'
-          redirect_to root_url
+          redirect_to root_path
         else
-          flash[:alert] = 'プロフィールの保存に失敗しました。'
           redirect_back(fallback_location: new_profile_path)
         end
-      end
-
-    def edit
-        @profile = Profile.find(params[:id])
     end
 
-    def update
-        @profile = Profile.find(params[:id])
-    
+    def edit
+    end
+
+    def update  
         if @profile.update(profile_params)
-          flash[:notice] = '正常に更新されました。'
-          redirect_to root_url
+          redirect_to root_path
         else
-          flash[:alert] = '正常に更新されませんでした。'
           render :edit
         end
     end
@@ -39,9 +36,12 @@ class ProfilesController < ApplicationController
     private
 
     def profile_params
-      params.require(:profile).permit(:height, :weight, :sex, :age, :goal_weight)
+      params.require(:profile).permit(:new_height, :new_weight, :sex, :age, :new_goal)
     end
 
+    def set_profile
+      @profile = Profile.find(params[:id])
+    end
 end
 
 
