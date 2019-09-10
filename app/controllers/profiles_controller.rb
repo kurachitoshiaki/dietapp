@@ -3,6 +3,7 @@ class ProfilesController < ApplicationController
 
     def index
       @profile = Profile.find_by(current_user[:user_id])
+      @chart = User.group_by_day(:created_at).count
     end
 
     def show
