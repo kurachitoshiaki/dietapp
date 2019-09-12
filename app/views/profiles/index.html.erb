@@ -1,11 +1,10 @@
-
+<div class="cards">  
   <div class="row">
-    <div class="col s12 m4">
+    <div class="col s12 m4" id = "content">
       <div class="card">
         <div class="card-image">
           <img src="https://cdn.pixabay.com/photo/2019/08/02/09/39/mugunghwa-4379251__480.jpg">
         <% if user_signed_in? %>
-        <a class="btn-floating halfway-fab waves-effect waves-light red", href="profiles/<%= @profile.user_id %>/edit" ><i class="material-icons">=</i></a>
           <span class="card-title">start_profile</span>
         </div>
         <div class="card-content">
@@ -21,19 +20,15 @@
   </div>
 
   <div class="row">
-    <div class="col s12 m4">
+    <div class="col s12 m4" id = "content">
       <div class="card">
         <div class="card-image">
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjg5CyTmuacDF1TGAByYNhCOxnJEqasps4fZZjxK3Oj1Tk0q6E">
+          <a class="btn-floating halfway-fab waves-effect waves-light red", href="profiles/<%= @profile.user_id %>/edit" ><i class="material-icons">=</i></a>
           <span class="card-title">Current_profile</span>
-          
         </div>
         <div class="card-content">
-    
-        
           <p>名前: <%= current_user.user_name %></p>
-          <p>性別: <%= @profile.sex  %></p>
-          <p>年齢: <%= @profile.age  %></p>
           <p>身長: <%= @profile.new_height  %></p>
           <p>現在体重: <%= @profile.new_weight  %></p>
           <p>目標体重: <%= @profile.new_goal %></p>
@@ -44,8 +39,10 @@
       </div>
     </div>
   </div>
- <%= line_chart @chart %>
-
-
+</div>
+<div class = "box">
+<a class="btn-floating halfway-fab waves-effect waves-light red", href="profiles/<%= @profile.id %>/weights/new" ><i class="material-icons">+</i></a>
+</div>
+<%= line_chart Weight.group_by_day(:created_at).average(:weight), messages: {empty: "No data"} %>
 <% end %>
   

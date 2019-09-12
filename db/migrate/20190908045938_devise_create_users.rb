@@ -18,6 +18,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
 
       ## Rememberable
       t.datetime :remember_created_at
+      t.timestamps
 
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
@@ -38,7 +39,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       # t.datetime :locked_at
 
 
-      t.timestamps null: false
     end
 
     add_index :users, :email,                unique: true
