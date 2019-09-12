@@ -22,7 +22,8 @@
     width: 100px;
 }
 #form{
-    padding-left: 50px;
+    padding-left: 20px;
+    margin: 20px;
 }
 #contentimg{
     height:100%;
@@ -31,6 +32,19 @@
 }
 .card-body{
     background-color: aquamarine;
-    height: 96%;
-    width: 96%;
+    height: 95%;
+    width: 95%;
+}
+.dropzone {
+    border: 2px dashed #b4bcc2;
+    .dz-message {
+    font-size: 16px;
+    text-align: center;
+    margin: 0
+    }
+}
+
+.photo{
+    height: 95%;
+    width: 95%;
 }

@@ -40,10 +40,16 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
+  
+  <div class="fallback">
+    <%= f.file_field :image %>
+  </div>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
+
 <% end %>
+
 
 <%= render "users/shared/links" %>
