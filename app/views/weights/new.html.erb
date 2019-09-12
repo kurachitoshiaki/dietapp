@@ -1,0 +1,13 @@
+<h4>今日の体重を入力してください</h4>
+<div class="row">
+  <div class="col s4">
+    <%= form_with model: [@profile,@weight] do |f| %>
+
+      <%= f.label :weight, '体重(kg)' %>
+      <%= f.text_field :weight %>
+
+      <%= f.submit '投稿', class: 'waves-effect waves-light btn orange' %>
+      <%= link_to 'キャンセル', root_path, class: 'waves-effect waves-light btn grey' %>
+    <% end %>
+  </div>
+</div>

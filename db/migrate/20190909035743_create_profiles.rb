@@ -10,6 +10,7 @@ class CreateProfiles < ActiveRecord::Migration[5.2]
       t.float :new_goal
       t.float :new_BMI
       t.bigint :user_id
+      t.timestamps
     end
   end
 end

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class WeightNewTest < ActiveSupport::TestCase
+class WeightTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

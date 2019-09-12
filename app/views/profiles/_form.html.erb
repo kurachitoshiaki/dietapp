@@ -2,10 +2,10 @@
   <div class="col s4">
     <%= form_with model: @profile do |f| %>
 
-      <%= f.label :new_height, '身長' %>
+      <%= f.label :new_height, '身長(cm)' %>
       <%= f.text_field :new_height %>
 
-      <%= f.label :new_weight, '体重' %>
+      <%= f.label :new_weight, '体重(kg)' %>
       <%= f.text_field :new_weight %>
 
       <%= f.label :sex, '性別' %><br>
@@ -14,7 +14,7 @@
       <%= f.label :age, '年齢' %>
       <%= f.text_field :age %>
 
-      <%= f.label :new_goal, '目標体重' %>
+      <%= f.label :new_goal, '目標体重(kg)' %>
       <%= f.text_field :new_goal %>
 
       <%= f.submit '投稿', class: 'waves-effect waves-light btn orange' %>
