@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   root "profiles#index"
   resources :profiles do
     resources :weights
-    resources :trainings
+    resources :trainings do
+      resources :menus
+    end
   end
   devise_scope :user do
     get "user/:id", :to => "users/registrations#detail"

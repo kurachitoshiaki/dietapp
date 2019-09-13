@@ -4,6 +4,7 @@ class CreateProfiles < ActiveRecord::Migration[5.2]
       t.string :text
       t.string :sex
       t.integer :age
+      t.string :image
       t.float :new_height
       t.float :new_weight
       t.float :new_goal

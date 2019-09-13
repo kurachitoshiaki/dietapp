@@ -1,67 +1,16 @@
-<form action="?" method="POST">
-<p>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-  <label class="form-check-label"for="inlineCheckbox1">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-  <label class="form-check-label"for="inlineCheckbox2">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-  <label class="form-check-label"for="inlineCheckbox3">3</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option3">
-  <label class="form-check-label"for="inlineCheckbox4">4</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option3">
-  <label class="form-check-label"for="inlineCheckbox5">5</label>
-</div>
-</p>
+<h4>　〜トレーニングメニューの作成〜</h4>
+<div class="row">
+  <div class="col s4">
+<%= form_with model:[@profile,@training], id: "form" do |f| %>
+      <%= f.label :name, 'トレーニング名' %>
+      <%= f.text_field :name %>
 
-<p>
-<input type="button" name="check-all" value="全てのチェックを入れる">
-<input type="button" name="uncheck-all" value="全てのチェックを外す">
-</p>
+      <%= f.label :met, '運動強度(MET)' %>
+      <%= f.text_field :met %>
 
-<p>
-<input type="submit" value="送信">
-</p>
-<div class="card" style="width: 18rem;"id="trai">
-  <img class="card-img-top" src="..." alt="カードの画像">
-  <div class="card-body">
-    <h5 class="card-title">カードのタイトル</h5>
-    <p class="card-text">以下のテキストを追加のコンテンツへの自然な導入としてサポート。 カードのコンテンツ カードのコンテンツ</p>
-  </div>
-</div>
-<div class="card" style="width: 18rem;"id="trai">
-  <img class="card-img-top" src="..." alt="カードの画像">
-  <div class="card-body">
-    <h5 class="card-title">カードのタイトル</h5>
-    <p class="card-text">以下のテキストを追加のコンテンツへの自然な導入としてサポート。 カードのコンテンツ カードのコンテンツ</p>
-  </div>
-</div>
-<div class="card" style="width: 18rem;"id="trai">
-  <img class="card-img-top" src="..." alt="カードの画像">
-  <div class="card-body">
-    <h5 class="card-title">カードのタイトル</h5>
-    <p class="card-text">以下のテキストを追加のコンテンツへの自然な導入としてサポート。 カードのコンテンツ カードのコンテンツ</p>
-  </div>
-</div>
-<div class="card" style="width: 18rem;"id="trai">
-  <img class="card-img-top" src="..." alt="カードの画像">
-  <div class="card-body">
-    <h5 class="card-title">カードのタイトル</h5>
-    <p class="card-text">以下のテキストを追加のコンテンツへの自然な導入としてサポート。 カードのコンテンツ カードのコンテンツ</p>
-  </div>
-</div>
-<div class="card" style="width: 18rem;"id="trai">
-  <img class="card-img-top" src="..." alt="カードの画像">
-  <div class="card-body">
-    <h5 class="card-title">カードのタイトル</h5>
-    <p class="card-text">以下のテキストを追加のコンテンツへの自然な導入としてサポート。 カードのコンテンツ カードのコンテンツ</p>
-  </div>
-</div>
+      <%= f.label :time, '運動時間(m)' %>
+      <%= f.text_field :time %>
+
+  <%= f.submit '投稿', class: 'waves-effect waves-light btn orange' %>
+  <%= link_to 'キャンセル', root_path, class: 'waves-effect waves-light btn grey' %>
+<% end %>
