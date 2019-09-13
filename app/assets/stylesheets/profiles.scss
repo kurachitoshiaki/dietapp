@@ -31,9 +31,8 @@
     padding-bottom: 10px;
 }
 .card-body{
-    background-color: aquamarine;
-    height: 95%;
-    width: 95%;
+    height: 100%;
+    width: 100%;
 }
 .dropzone {
     border: 2px dashed #b4bcc2;
@@ -45,6 +44,10 @@
 }
 
 .photo{
-    height: 95%;
-    width: 95%;
+    height: 100%;
+    width: 100%;
+}
+#trai{
+    float: left;
+    background-color: aliceblue;
 }
