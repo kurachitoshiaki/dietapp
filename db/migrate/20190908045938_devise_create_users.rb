@@ -11,6 +11,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.float :gole
       t.float :start_BMI
       t.string :encrypted_password, null: false, default: ""
+      t.string :photo
 
       ## Recoverable
       t.string   :reset_password_token

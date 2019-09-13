@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_12_095751) do
+ActiveRecord::Schema.define(version: 2019_09_13_062219) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -33,11 +33,20 @@ ActiveRecord::Schema.define(version: 2019_09_12_095751) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.float "total_met"
+    t.integer "total_time"
+    t.integer "total_kcal"
+    t.bigint "training_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "text"
-    t.string "image"
     t.string "sex"
     t.integer "age"
+    t.string "image"
     t.float "new_height"
     t.float "new_weight"
     t.float "new_goal"
@@ -49,10 +58,9 @@ ActiveRecord::Schema.define(version: 2019_09_12_095751) do
 
   create_table "trainings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.float "MET"
+    t.float "met"
     t.integer "time"
     t.integer "kcal"
-    t.bigint "user_id"
     t.bigint "profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -66,6 +74,7 @@ ActiveRecord::Schema.define(version: 2019_09_12_095751) do
     t.float "gole"
     t.float "start_BMI"
     t.string "encrypted_password", default: "", null: false
+    t.string "photo"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
