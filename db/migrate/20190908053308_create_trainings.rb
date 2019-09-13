@@ -5,7 +5,6 @@ class CreateTrainings < ActiveRecord::Migration[5.2]
       t.float :MET
       t.integer :time
       t.integer :kcal
-      t.bigint :user_id
       t.bigint :profile_id
       t.timestamps
     end

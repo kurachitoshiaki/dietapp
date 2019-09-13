@@ -25,12 +25,12 @@ class ProfilesController < ApplicationController
         else
           redirect_back(fallback_location: new_profile_path)
         end
-    end
-
-    def edit
-    end
-
-    def update  
+      end
+      
+      def edit
+      end
+      
+      def update  
         if @profile.update(profile_params)
           redirect_to root_path
         else
@@ -41,7 +41,7 @@ class ProfilesController < ApplicationController
     private
 
     def profile_params
-      params.require(:profile).permit(:new_height, :new_weight, :sex, :age, :new_goal)
+      params.require(:profile).permit(:image, :new_height, :new_weight, :sex, :age, :new_goal)
     end
 
     def set_profile
