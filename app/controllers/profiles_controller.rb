@@ -5,7 +5,8 @@ class ProfilesController < ApplicationController
    def index
     if Profile.find_by(current_user[:user_id])
       @profile = Profile.find_by(current_user[:user_id])
-      @weight = Weight.find_by(current_user[:profile_id]) 
+      @weights = Weight.includes(current_user[:profile_id]).order("created_at ASC").last(1)
+      @menu = Menu.find_by(params[:id])
     else
       redirect_to action: 'new'
     end
@@ -28,6 +29,7 @@ class ProfilesController < ApplicationController
       end
       
       def edit
+        @menu = Menu.find_by(params[:id])
       end
       
       def update  

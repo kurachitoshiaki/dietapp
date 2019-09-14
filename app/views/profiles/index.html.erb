@@ -1,3 +1,4 @@
+<% @weights.each do |weight| %>
 <div class="card mb-3" style="max-width: 100%;" id="content">
   <div class="row no-gutters">
     <div class="col-md-4">
@@ -28,21 +29,22 @@
         <h5 class="card-title">[Current_Profile]</h5>
           <p>身長: <%= @profile.new_height  %></p>
           <p>目標体重: <%= @profile.new_goal %></p>
-          <% if Weight.exists? %>  
-          <p>現在体重: <%= @weight.weight  %></p>
+          <% if Weight.exists? %>
+          <p>現在体重: <%= weight.weight  %></p>
           <% else %>
           <%= link_to "今日の体重を入力してください","profiles/#{@profile.user_id}/weights/new" %>
           <% end %>
         <% if Weight.exists? %>  
-          <p>BMI: <% num = @weight.weight / (@profile.new_height / 100) / (@profile.new_height / 100) %>
+          <p>BMI: <% num = weight.weight / (@profile.new_height / 100) / (@profile.new_height / 100) %>
                   <%= num.round(1) %></p>
-        <p class="card-text"><small class="text-muted"><%= "最終更新: " + @weight.updated_at.strftime("%Y-%m-%d %H:%M") %></small></p>
+        <p class="card-text"><small class="text-muted"><%= "最終更新: " + weight.updated_at.strftime("%Y-%m-%d %H:%M") %></small></p>
         <% else %>
         <% end %>
       </div>
     </div>
   </div>
 </div>
+<% end %>
 <div class = "box">
 <a class="btn-floating halfway-fab waves-effect waves-light red", href="profiles/<%= @profile.id %>/weights/new" ><i class="material-icons">+</i></a>
 </div>
