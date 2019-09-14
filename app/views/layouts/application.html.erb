@@ -44,10 +44,14 @@
           トレーニング
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="profiles/<%= @profile.id %>/trainings/new">メニューの作成</a>
-          <a class="dropdown-item" href="profiles/<%= @profile.id %>/trainings/1/menus/new">トレーニングの登録</a>
+        <% if Menu.exists? %>
+          <a class="dropdown-item" href="menus/<%= @menu_id %>/trainings/new">メニューの作成</a>
+          <a class="dropdown-item" href="menus/<% @menu.id %>/edit">トレーニングの登録</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">トレーニング開始</a>
+        <% else %>
+         <a class="dropdown-item" href="menus/new">トレーニングメニューの作成<a>
+        <% end %>
         </div>
       </li>
       <% else %>

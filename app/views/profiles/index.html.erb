@@ -9,7 +9,6 @@
           <p>名前: <%= current_user.user_name %></p>
           <p>身長: <%= current_user.start_height %></p>
           <p>登録時体重: <%= current_user.start_weight %></p>
-          <p>目標体重: <%= current_user.gole %></p>
           <p>BMI: <% bmi = current_user.start_weight / (current_user.start_height / 100) / (current_user.start_height / 100) %>
                   <%= bmi.round(1) %></p>
         <p class="card-text"><small class="text-muted"><%= "登録日時: " + current_user.created_at.strftime("%Y-%m-%d %H:%M")%></small></p>
@@ -28,11 +27,18 @@
       <div class="card-body">
         <h5 class="card-title">[Current_Profile]</h5>
           <p>身長: <%= @profile.new_height  %></p>
-          <p>現在体重: <%= @profile.new_weight  %></p>
           <p>目標体重: <%= @profile.new_goal %></p>
-          <p>BMI: <% num = @profile.new_weight / (@profile.new_height / 100) / (@profile.new_height / 100) %>
+          <% if Weight.exists? %>  
+          <p>現在体重: <%= @weight.weight  %></p>
+          <% else %>
+          <%= link_to "今日の体重を入力してください","profiles/#{@profile.user_id}/weights/new" %>
+          <% end %>
+        <% if Weight.exists? %>  
+          <p>BMI: <% num = @weight.weight / (@profile.new_height / 100) / (@profile.new_height / 100) %>
                   <%= num.round(1) %></p>
         <p class="card-text"><small class="text-muted"><%= "最終更新: " + @weight.updated_at.strftime("%Y-%m-%d %H:%M") %></small></p>
+        <% else %>
+        <% end %>
       </div>
     </div>
   </div>
