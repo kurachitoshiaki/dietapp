@@ -3,8 +3,9 @@ class WeightsController < ApplicationController
     def new
         @profile = Profile.find(params[:profile_id])
         @weight = Weight.new
+        @menu = Menu.find_by(params[:id])
     end
-  
+    
     def create
         @weight = Weight.create(weight_params)
         if @weight.save

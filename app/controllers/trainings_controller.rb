@@ -13,6 +13,8 @@ class TrainingsController < ApplicationController
         redirect_back(fallback_location: training_menu.id_training_new_path)
         end
     end
+    def edit
+    end
 
     private
 
