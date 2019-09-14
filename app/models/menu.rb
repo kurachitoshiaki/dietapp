@@ -1,3 +1,3 @@
 class Menu < ApplicationRecord
-    belongs_to :training
+    has_many :trainings
 end

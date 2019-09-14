@@ -1,22 +1,21 @@
 class MenusController < ApplicationController
 
     def new
-        @trainings = Training.find(params[:training_id])
-        @menus = Menu.new
+        @menu = Menu.new
     end
   
     def create
-        @weight = Weight.create(weight_params)
-        if @weight.save
+        @menu = Weight.create(weight_params)
+        if @menu.save
         redirect_to root_path
         else
-        redirect_back(fallback_location: weight_profile.id_weight_new_path)
+        redirect_back(fallback_location: menu_new)
         end
     end
     
     private
 
     def weight_params
-        params.require(:weight).permit(:weight).merge(profile_id: params[:profile_id])
+        params.require(:menu).permit(:total_met,:total_time,:total_kcal)
     end
 end

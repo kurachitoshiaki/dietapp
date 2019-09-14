@@ -1,7 +1,7 @@
 class TrainingsController < ApplicationController
 
     def new
-        @profile = Profile.find(params[:profile_id])
+        @menu = Menu.find(params[:menu_id])
         @training = Training.new
     end
   
@@ -10,13 +10,13 @@ class TrainingsController < ApplicationController
         if @training.save
         redirect_to root_path
         else
-        redirect_back(fallback_location: training_profile.id_training_new_path)
+        redirect_back(fallback_location: training_menu.id_training_new_path)
         end
     end
 
     private
 
     def training_params
-        params.require(:training).permit(:name,:met,:time,:kcal).merge(profile_id: params[:profile_id])
+        params.require(:training).permit(:name,:met,:time,:kcal).merge(menu_id: params[:menu_id])
     end
 end
