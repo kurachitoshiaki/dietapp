@@ -1,24 +1,31 @@
-# README
+ダイエットサポートアプリ
+====
+Ruby on Rails製の体重を記録するWebサービスです。
+体重をグラフで管理できる他、トレーニングのサポート機能も追加予定です。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
+[体重管理機能]
+毎日の体重を入力することによって現在の身長と体重からBMIを自動で計算してくれます。
+また、グラフで体重の一週間分の変化を確認することができ、体重の推移を視覚的に表示しています。
 
-Things you may want to cover:
+[登録時との比較]
+こちらのアプリを登録時にご自身の身長、体重、全体像を写真で入力することによって
+現在の自分と比較することができるようにしています。
+過去の自分と比較して痩せていく自分をモチベーションに頑張りましょう。
 
-* Ruby version
+追加予定機能
+[トレーニングサポート機能]
+トレーニングの種類と時間を選択してもらうことによって合計消費カロリーを計算してくれます。
+また、合計時間を元にタイマーとトレーニングを表示し、行うトレーニングをわかりやすく管理してくれます。
 
-* System dependencies
+## Demo
 
-* Configuration
+## VS. 
 
-* Database creation
+## Requirement
 
-* Database initialization
+## Usage
 
-* How to run the test suite
+## Install
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Contribution

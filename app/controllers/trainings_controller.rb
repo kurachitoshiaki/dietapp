@@ -10,9 +10,10 @@ class TrainingsController < ApplicationController
         if @training.save
         redirect_to root_path
         else
-        redirect_back(fallback_location: training_menu.id_training_new_path)
+        redirect_back(fallback_location: menus_menu.id_trainings_new_path)
         end
     end
+    
     def edit
     end
 
