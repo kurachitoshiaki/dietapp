@@ -1,7 +1,6 @@
 ダイエットサポートアプリ
 ====
-Ruby on Rails製の体重を記録するWebサービスです。
-体重をグラフで管理できる他、トレーニングのサポート機能も追加予定です。
+Ruby on Rails製の体重を記録するWebサービスです。体重をグラフで管理できる他、トレーニングのサポート機能も追加予定です。
 
 ## Description
 
@@ -21,13 +20,12 @@ Ruby on Rails製の体重を記録するWebサービスです。
 また、合計時間を元にタイマーとトレーニングを表示し、行うトレーニングをわかりやすく管理してくれます。
 
 ## Demo
-
-## VS. 
-
-## Requirement
-
-## Usage
+体重管理のグラフ
+トレーニング管理機能
 
 ## Install
 
-## Contribution
+$ git clone https://github.com/kurachitoshiaki/dietapp.git
+$ cd dietapp
+$ bundle install 
+
