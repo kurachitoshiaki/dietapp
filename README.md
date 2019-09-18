@@ -30,3 +30,5 @@ __トレーニングサポート機能__
     $ cd dietapp  
     $ bundle install 
 
+## License
+MIT
