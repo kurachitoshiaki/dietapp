@@ -11,12 +11,12 @@ $(document).ready(function () {
     $('input[type="checkbox"]').removeAttr('checked').prop('checked', false).change();
     });
 
-    // $('form').on('submit', function (){
-    // var $checkbox = $('input[type="checkbox"]');
-    // alert(
-    //     $checkbox.attr('checked') || $checkbox.prop('checked') ?
-    //     '登録が完了しました' : '選択してください'
-    // );
+    $('#training').on('submit', function (){
+    var $checkbox = $('input[type="checkbox"]');
+    alert(
+        $checkbox.attr('checked') || $checkbox.prop('checked') ?
+        '登録が完了しました' : '選択してください'
+    );
 
     return false;
     });
