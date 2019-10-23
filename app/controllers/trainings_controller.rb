@@ -1,10 +1,4 @@
 class TrainingsController < ApplicationController
-
-    def new
-        @menu = Menu.find(params[:menu_id])
-        @training = Training.new
-    end
-  
     def create
         @training = Training.create(training_params)
         if @training.save
