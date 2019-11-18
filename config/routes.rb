@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     :sessions => 'users/sessions'   
   } 
   
-  root "profiles#index"
+  root 'profiles#index'
   resources :profiles do
     resources :weights
   end
@@ -12,9 +12,9 @@ Rails.application.routes.draw do
     resources :trainings
   end
   devise_scope :user do
-    get "user/:id", :to => "users/registrations#detail"
-    get "signup", :to => "users/registrations#new"
-    get "login", :to => "users/sessions#new"
-    get "logout", :to => "users/sessions#destroy"
+    get 'user/:id', :to => 'users/registrations#detail'
+    get 'signup', :to => 'users/registrations#new'
+    get 'login', :to => 'users/sessions#new'
+    get 'logout', :to => 'users/sessions#destroy'
   end
 end
