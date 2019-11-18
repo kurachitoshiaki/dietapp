@@ -1,12 +1,12 @@
-<div class="row">
-  <div class="col s4">
-    <%= form_with model: @profile, id: "form" do |f| %>
+<div class='row'>
+  <div class='col s4'>
+    <%= form_with model: @profile, id: 'form' do |f| %>
 
       <%= f.label :new_height, '身長(cm)' %>
       <%= f.text_field :new_height,:autofocus => true%>
 
       <%= f.label :sex, '性別' %><br>
-      <%= f.select :sex, [["男", "男"], ["女", "女"]] %>
+      <%= f.select :sex, [['男', '男'], ['女', '女']] %>
 
       <%= f.label :age, '年齢' %>
       <%= f.text_field :age %>
@@ -14,7 +14,7 @@
       <%= f.label :new_goal, '目標体重(kg)' %>
       <%= f.text_field :new_goal %>
 
-    <div class="fallback">
+    <div class='fallback'>
       <%= f.label :image, 'プロフィール写真' %><br>
       <%= f.file_field :image %>
     </div>
